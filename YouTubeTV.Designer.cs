@@ -49,7 +49,7 @@ namespace YouTubeWMC {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "YouTubeTV";
-            this.Text = "Form1";
+            this.Text = "YouTube TV";
             this.ResumeLayout(false);
 
         }
@@ -57,6 +57,10 @@ namespace YouTubeWMC {
         #endregion
 
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
+
+        public CefSharp.WinForms.ChromiumWebBrowser GetChromiumWebBrowser() {
+            return this.chromiumWebBrowser1;
+        }
     }
 }
 
