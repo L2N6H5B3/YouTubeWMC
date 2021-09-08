@@ -1,13 +1,7 @@
 ﻿using CefSharp;
 using CefSharp.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +22,7 @@ namespace YouTubeWMC {
             this.Bounds = Screen.PrimaryScreen.Bounds;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            this.cefSharpBrowser.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
             // Create CefSharp Settings
             var settings = new CefSettings();
@@ -41,9 +35,9 @@ namespace YouTubeWMC {
             // Initialise CefSharp
             Cef.Initialize(settings);
             // Set KeyboardHandler
-            chromiumWebBrowser1.KeyboardHandler = new KeyboardHandler();
+            cefSharpBrowser.KeyboardHandler = new KeyboardHandler();
             // Set YouTube TV Url
-            chromiumWebBrowser1.Load(youtubeTvUrl);
+            cefSharpBrowser.Load(youtubeTvUrl);
         }
     }
 
