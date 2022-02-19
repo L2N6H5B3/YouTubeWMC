@@ -28,23 +28,23 @@ namespace YouTubeWMC {
             this.cefSharpBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
             this.SuspendLayout();
             // 
-            // chromiumWebBrowser1
+            // cefSharpBrowser
             // 
             this.cefSharpBrowser.ActivateBrowserOnCreation = false;
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.cefSharpBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cefSharpBrowser.Location = new System.Drawing.Point(0, 0);
             this.cefSharpBrowser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cefSharpBrowser.Name = "chromiumWebBrowser1";
-            this.cefSharpBrowser.Size = new System.Drawing.Size(800, 450);
+            this.cefSharpBrowser.Name = "cefSharpBrowser";
+            this.cefSharpBrowser.Size = new System.Drawing.Size(900, 562);
             this.cefSharpBrowser.TabIndex = 0;
             // 
             // YouTubeTV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.cefSharpBrowser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -2,8 +2,10 @@
 using CefSharp.WinForms;
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace YouTubeWMC {
     public partial class YouTubeTV : Form {
@@ -19,9 +21,10 @@ namespace YouTubeWMC {
             InitializeComponent();
 
             // Configure Form Sizing
-            this.Bounds = Screen.PrimaryScreen.Bounds;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
+            this.TopMost = true;
             this.cefSharpBrowser.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
             // Create CefSharp Settings
@@ -39,6 +42,9 @@ namespace YouTubeWMC {
             // Set YouTube TV Url
             cefSharpBrowser.Load(youtubeTvUrl);
         }
+
+        [DllImport("user32.dll")]
+        static extern short GetAsyncKeyState(int KeyCode);
     }
 
     public class KeyboardHandler : IKeyboardHandler {
@@ -46,7 +52,7 @@ namespace YouTubeWMC {
         protected Timer wmcTimer = new Timer() {
             Interval = 100
         };
-        
+
         public KeyboardHandler() {
             // Add Timer Event Handler
             wmcTimer.Tick += WmcTimer_Tick;
